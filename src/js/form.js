@@ -2,8 +2,11 @@ import debounce from 'lodash.debounce';
 import { refs } from './refs';
 import { closeModal } from './utils/closeModal';
 
+const CONTACT_LIST = 'contact-list';
 const FORM_DATA = 'form-data';
 const formData = JSON.parse(localStorage.getItem(FORM_DATA)) ?? {};
+
+const contactList = JSON.parse(localStorage.getItem(CONTACT_LIST)) ?? [];
 
 refs.inputContactForm.elements.name.value = formData.name ?? '';
 refs.inputContactForm.elements.tel.value = formData.tel ?? '';
@@ -17,11 +20,15 @@ const inputHandler = e => {
 const submitHandler = e => {
   e.preventDefault();
   const { name, tel } = e.currentTarget.elements;
-  console.log({ name, tel });
+
   if (name.value === '' || tel.value === '') {
     alert('Please enter all data');
     return;
   }
+  localStorage.setItem(
+    CONTACT_LIST,
+    JSON.stringify([...contactList, { name: name.value, tel: tel.value }]),
+  );
   localStorage.removeItem(FORM_DATA);
   e.currentTarget.reset();
   closeModal();

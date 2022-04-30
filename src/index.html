@@ -12,7 +12,27 @@
     />
   </head>
   <body>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <p class="modal__title">Add contact</p>
 
+        <form class="form" action="#" autocomplete="off" method="POST">
+          <label class="form__field">
+            <span class="form__label">Name</span>
+            <input class="form__input" type="text" name="name" autofocus required />
+          </label>
+
+          <label class="form__field">
+            <span class="form__label">Phone</span>
+            <input class="form__input" type="tel" name="tel" required autocomplete="tel" />
+          </label>
+
+          <button class="btn form__btn" type="submit">Create</button>
+        </form>
+      </div>
+    </div>
+
+    <button data-action="add-contact" data-modal class="btn">Add contact +</button>
 
     <script src="./index.js"></script>
   </body>

@@ -10,6 +10,7 @@
       integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g=="
       crossorigin="anonymous"
     />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.css" rel="stylesheet"></link>
   </head>
   <body>
     <div class="backdrop is-hidden" data-modal>
@@ -25,6 +26,11 @@
           <label class="form__field">
             <span class="form__label">Phone</span>
             <input class="form__input" type="tel" name="tel" autocomplete="tel" />
+          </label>
+
+          <label class="form__field">
+            <span class="form__label">Country</span>
+            <select class="form__input" id="single" name="country"></select>
           </label>
 
           <button class="btn form__btn" type="submit">Create</button>

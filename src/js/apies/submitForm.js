@@ -6,15 +6,14 @@ export const submitForm = async data => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (isSuccess) {
-        resolve('Дані були збережені');
         contactList.push(data);
-        console.log(contactList);
+
         localStorage.setItem(CONTACT_LIST, JSON.stringify(contactList));
         localStorage.removeItem(FORM_DATA);
-        console.log('success');
+
+        resolve('Дані були збережені');
       } else {
         reject('Щось пішло не так');
-        console.log('error');
       }
     }, 1000);
   });

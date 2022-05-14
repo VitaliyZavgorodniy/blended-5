@@ -208,3 +208,24 @@
     color: #fff;
   }
 }
+
+.ss-single-selected {
+  border: none !important;
+}
+
+.ss-content {
+  margin: 5px -5px 0;
+}
+
+.contact {
+  border: 1px solid #757575;
+  border-radius: 5px;
+
+  &__name {
+    font-size: 16px;
+  }
+
+  &__thumb {
+    width: 50px;
+  }
+}
